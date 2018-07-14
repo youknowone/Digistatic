@@ -1,0 +1,8 @@
+Digistatic
+----------
+
+MFC Library for LED control
+
+Original project: https://www.codeproject.com/Articles/307/Static-LED-control-CDigiStatic
+
+Slightly fixed to working on VS2017
