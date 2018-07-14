@@ -55,7 +55,7 @@
 /////////////////////////////////////////////////////////////////////////////
 #include <afxtempl.h>
 
-#include "RGBCOLOR.H"
+#include "Rgbcolor.h"
 
 // CRect class with double precision for accurate drawing.
 class CDoubleRect

@@ -10,7 +10,7 @@
 // providing that this notice and the authors name and all copyright   
 // notices remains intact. If the source code in this file is used in   
 // any  commercial application then a statement along the lines of   
-// "Portions Copyright © 2002 Michel Wassink" must be included in   
+// "Portions Copyright Â© 2002 Michel Wassink" must be included in   
 // the startup banner, "About" box or printed documentation. An email   
 // letting me know that you are using it would be nice as well. That's   
 // not much to ask considering the amount of work that went into this.  
@@ -29,7 +29,9 @@
 #include "stdafx.h"
 #include "Digistatic.h"
 #include "Curvefit.h"
-#include "MEMDC.H"
+namespace digistatic {
+#include "MemDC.h"
+}
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -971,7 +973,7 @@ void CDigiStatic::OnPaint()
 
 	CPaintDC dc(this); // device context for painting
 	dc.SetBkColor(m_BackColor);
-	CMemDC MemDC(&dc, &rect, m_bTransparent);
+	digistatic::CMemDC MemDC(&dc, &rect, m_bTransparent);
 
 	CBrush hBrushOff, hBrushOn;
 	hBrushOff.CreateSolidBrush(m_OffColor);
@@ -1032,7 +1034,7 @@ void CDigiStatic::OnPaint()
 
 	CRgn* region = m_bTransparent ? new CRgn : NULL;
 	// Draw all characters...
-	for (iChar = 0; iChar < m_CharArray.GetSize(); iChar++)
+	for (int iChar = 0; iChar < m_CharArray.GetSize(); iChar++)
 	{
 
 		CharRect.SetRect(CharRect.left, CharRect.top,
